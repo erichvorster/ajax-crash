@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1 - Text files</title>
+</head>
+<body>
+    <button id ="button">Get text file</button>
+
+    <script>
+//Creating a querySecetor
+document.getElementById("button").addEventListener('click',loadText);
+
+function loadText (){
+    // Create XHR object 
+    var xhr = new XMLHttpRequest();
+    //Open - (Type, url/file, async(true/false))
+    xhr.open('GET', 'sample.txt', true);
+
+    xhr.onload = function(){
+        if(this.status == 200){
+            console.log(this.responseText);
+        }
+    }
+// Sends request
+    xhr.send();// This is viewable in the console. But 
+} 
+
+
+    </script>
+</body>
+</html>
